@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript Calculator</title>
+		<style type="text/css">
+			/**/
+
+			body{
+				border: 0;
+				margin: 0;
+				padding: 0;
+				background-color: #A9A9A9;
+				background-image: linear-gradient(#A9A9A9, #A9A9A9)
+			}
+
+			/*
+				Rules for Screen Sizes less t from 760px to ther lower
+			*/
+
+	@media screen and (max-width: 760px){
+			#calculator{
+			width: 200px;
+			height: 570px;
+
+				}
+
+			.keypads{
+
+			display: flex;
+				}
+	.special-keys button {
+				width: 50px;
+			}
+.num-keys{
+	padding: none;
+	margin: none;
+}
+.num-keys button{
+	width: 60px;
+}
+.special-keys{
+	display: flex;
+	flex-direction: column;
+
+}
+			}
+
+			/*
+			Normal CSS  Rules
+		*/
+		
+			#calculator {
+				margin: auto;
+				border: 1px solid #A9A9A9;
+				height: 550px;
+				width: 400px;
+				padding: 12px;
+				border-radius: 10px;
+				box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px 0.1px #89847e;
+				background-color: #F0FFFF;
+			}
+			.calc-header {
+				height: 90px;
+			}
+			button {
+				width: 90px;
+				height: 60px;
+				background-color: skyblue;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				color: white;
+				font-size: 2rem;
+				font-weight: 300;
+				padding: 5px;
+				margin: 2px;
+			}
+
+			.screen {
+				border: none;
+				height: 100px;
+				width: 95%;
+				background-color: #2F4F4F;
+				padding: 10px;
+				border-radius: 10px;
+			}
+
+			.formula {
+				height: 40px;
+				text-align: center;
+				font-size: 1.5rem;
+				color: #A0522D;
+				margin-bottom: 4px;
+				margin-top: 4px;
+				font-weight: 600;
+
+			}
+			.result {
+				font-weight: 600;
+				text-align: center;
+				font-size: 2rem;
+				color: #A0522D;
+				height: 40px;
+				margin-top: 4px;
+				margin-bottom: 4px;
+
+			}
+			.keypads {
+				height: 400px;
+				width: 100%;
+				margin: auto;
+				margin-top: 20px;
+			}
+			.special-keys button {
+				width: 50px;
+				height: 30px;
+				background-color: skyblue;
+				border: none;
+				border-radius: 10px;
+				cursor: pointer;
+				color: white;
+				font-size: 0.9rem;
+				font-weight: 300;
+				padding: 5px;
+				margin: 1px;
+
+			}
+
+			.special-keys {
+				margin-bottom: 8px;
+				/*display: flex;
+				flex-direction: row;*/
+			}
+
+			.ac-btn {
+				background-color: #FF4500 !important;
+			}
+
+			.del-btn {
+				background-color: red !important;
+			}
+
+			.op-btn {
+				background-color: #191970 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calculator">
+			<div class="calc-header">
+			</div>
+			<div class="screen">
+				<div class="formula">
+
+				</div>
+				<div class="result">
+
+				</div>
+			</div>
+
+			<div class="keypads">
+				<div class="special-keys">
+
+					</button>
+					<button class="button ac-btn" data-value="AC">
+						AC
+					</button>
+					</button>
+					<button class="button del-btn" data-value="DEL">
+						DEL
+					</button>
+					
+				</div>
+				<div class="num-keys">
+							<button data-value="7">7</button>
+							<button data-value="8">8</button>
+							<button data-value="9">9</button>
+							<button data-value="÷" class="op-btn">&divide;</button>
+							<button data-value="4">4</button>
+							<button data-value="5">5</button>
+							<button data-value="6">6</button>
+							<button data-value="×" class="op-btn">&times;</button>
+							<button data-value="1">1</button>
+							<button data-value="2">2</button>
+							<button data-value="3">3</button>
+							<button data-value="-" class="op-btn">&minus;</button>
+							<button data-value="0">0</button>
+							<button data-value=".">.</button>
+							<button data-value="=" class="op-btn">&equals;</button>
+							<button data-value="+" class="op-btn">&plus;</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+					 /*
+					the exponetial function
+					 the function that returns that exponential value of a number.
+
+					 The function was not iplemented int he current Project
+					 */ 
+
+				function pow(x,n){
+			  		let result = 1;
+			  		// multiply result by x, n times in the loop
+			  		for (let i = 0; i < n; i++) {
+			   			 result *= x;
+			  	 }
+			  return result;
+			}
+
+			/*
+				the function that returns the squre of  a number.
+			this function was not inplemented in the Current Project*/ 
+ 
+			function quare(a){
+				return a*=a;
+			}
+						//Get all the button elements within  the div element of id=calculator and store them in kesy.
+
+						let keys = document.querySelectorAll("#calculator button");
+						//Store the div element with className of formula in formular.
+						let formular = document.querySelector(".formula");
+						let result = document.querySelector(".result");
+						var decimalAdded = false;
+						// Array of Operators symbols
+						let operators = ["+", "-", "÷", "×"];
+
+						for (let i = 0; i < keys.length; i++) {
+							keys[i].onclick = function (e) {
+								let buttonVal = this.getAttribute("data-value");
+								if (formular.innerText != "" && buttonVal === "=") {
+									let equation = formular.innerHTML;
+									//Replacing the x amd ÷ signs with Proper Mathematical Opreators.
+									equation = equation.replace(/×/g, '*').replace(/÷/g, '/');
+
+									let lastCharacter = equation[equation.length - 1];
+
+									/* Checks  for the  occurances of operatores at the end of the Formula  and remove them before doing the actual  calculation.*/
+									if (operators.indexOf(lastCharacter) > -1 || lastCharacter == ".") {
+										equation = equation.replace(/.$/, '');
+
+										result.innerHTML = eval(equation);
+										formular.innerHTML = "";
+										decimalAdded = false;
+
+									} else {
+										// Does the Calculation
+										result.innerHTML = eval(equation);
+									
+										decimalAdded = false;
+									}
+								}
+
+								else if (operators.indexOf(buttonVal) > -1){
+									let equation = formular.innerHTML;
+
+									let lastCharacter = equation[equation.length - 1];
+
+									if (equation == "" && buttonVal == "-") {
+										equation += buttonVal;
+										formular.innerHTML = equation;
+										decimalAdded = false;
+									}
+									else if (equation == "" && buttonVal != "-") {
+										formular.innerHTML = "";
+										decimalAdded = false;
+									} else if (operators.indexOf(lastCharacter) > -1) {
+										formular.innerHTML += "";
+										decimalAdded = false;
+									}
+									else {
+										formular.innerHTML += buttonVal;
+										decimalAdded = false;
+									}
+								}
+								else if (buttonVal == "AC") {
+						
+									formular.innerHTML = "";
+									result.innerHTML = "";
+									decimalAdded = false;
+								}
+								// Deleting the las input from the formul.
+
+								// Check if the Button CLicked is a delete button.
+								else if (buttonVal == "DEL") {
+									let equation = formular.innerHTML;
+									//the the last character from the formula inputs
+									let lastCharacter = equation[equation.length - 1];
+									//Deleties of the last character from the formular bar and leaves its space empty.
+									equation = equation.replace(lastCharacter, "");
+									formular.innerHTML = equation;
+								}
+								//append the btn velue to the formular if otherwise.
+								else if (buttonVal == "=" && formular.innerText == "") {
+									formular.innerText = "";
+									decimalAdded = false;
+								}
+								//checks for decimal bauton clicks.
+								else if (buttonVal == '.') {
+									if (!decimalAdded) {
+										formular.innerHTML += buttonVal;
+										decimalAdded = true;
+									}
+								}
+								else if(buttonVal=='√'){
+									//formular.innerHTML += buttonVal;
+									let equation=formular.innerHTML;
+									if(equation!==""&& formular.innerHTML.some((val)=>operators.indexOf(val)!==-1)){
+										formular.innerHTML += buttonVal
+									}else{
+										formular.innerHTML += buttonVal
+									}
+								}
+
+								else {
+
+									formular.innerText += buttonVal;
+								}
+								e.preventDefault();
+							}
+						}
+		</script>
+	</body>
+
+</html>
