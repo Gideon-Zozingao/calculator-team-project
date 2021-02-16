@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript Calculator</title>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Javascript Calculator</title>
-		
-	</head>
-	<body>
-		<div id="calculator">
-			<div class="calc-header">
-			</div>
-			<div class="screen">
-				<div class="formula">
+<link rel=stylesheet href=app.css type = text/css>
+</head>
 
-				</div>
-				<div class="result">
 
-				</div>
-			</div>
-
-			<div class="keypads">
-				<div class="special-keys">
-
-					</button>
-					<button class="button ac-btn" data-value="AC">
-						AC
-					</button>
-					</button>
-					<button class="button del-btn" data-value="DEL">
-						DEL
-					</button>
-					
-				</div>
-				<div class="num-keys">
-							<button data-value="7">7</button>
-							<button data-value="8">8</button>
-							<button data-value="9">9</button>
-							<button data-value="÷" class="op-btn">&divide;</button>
-							<button data-value="4">4</button>
-							<button data-value="5">5</button>
-							<button data-value="6">6</button>
-							<button data-value="×" class="op-btn">&times;</button>
-							<button data-value="1">1</button>
-							<button data-value="2">2</button>
-							<button data-value="3">3</button>
-							<button data-value="-" class="op-btn">&minus;</button>
-							<button data-value="0">0</button>
-							<button data-value=".">.</button>
-							<button data-value="=" class="op-btn">&equals;</button>
-							<button data-value="+" class="op-btn">&plus;</button>
-				</div>
-			</div>
+<body>
+<div id= "calculator">
+	<div class="calc-header">
+	</div>
+	<div class="screen">
+		<div class="formula">
+			
 		</div>
+		<div class="result">
+			
+		</div>
+	</div>
+
+	<div class="keypads">
+		<div class="special-keys">
+			
+			</button>
+				<button id="ac"class="button ac-btn" data-value="AC">
+				AC
+			</button>
+			</button>
+				<button id ="del"class="button del-btn" data-value="DEL">
+				DEL
+			</button>
+				<button class="button op-btn-n" data-value="n!">
+				n!
+			</button>
+				<button class="button op-btn-n" data-value="">
+				Log
+			</button></button>
+				<button class="button op-btn-n" data-value="^">
+				<i>X<sup>y</sup></i>
+			</button></button>
+			
+			<button class="button op-btn-n" data-value="sqr">
+				<i>X<sup>2</sup></i>
+			</button>
+				<button class="button  op-btn-n" data-value="sqrt">
+				<i>&Sqrt;</i>
+			</button>
+		</div>
+		<div class="num-keys">
+			<button id="sev" data-value="7">7</button>
+			<button id="eig" data-value="8">8</button>
+			<button id="ni" data-value="9">9</button>
+			<button data-value="÷" class="op-btn-d">&divide;</button>
+			<button id="fo"data-value="4">4</button>
+			<button id="fi"data-value="5">5</button>
+			<button id="si"data-value="6">6</button>
+			<button data-value="×" class="op-btn-m">&times;</button>
+			<button id="on" data-value="1">1</button>
+			<button id="tw"data-value="2">2</button>
+			<button id="th"data-value="3">3</button>
+			<button data-value="-" class="op-btn-s">&minus;</button>
+			<button id="ze"data-value="0">0</button>
+			<button id="fs"data-value=".">.</button>
+			<button data-value="+" class="op-btn-p">&plus;</button>
+			<button data-value="=" class="op-btn-eq">&equals;</button>
+			
+		</div>
+	</div>
+</div>
 		<script type="text/javascript">
 
 					 /*
