@@ -1,0 +1,376 @@
+		body{
+			border: 0;
+			margin: 0;
+			padding: 0;
+			background-color: #A9A9A9;
+			background-image:linear-gradient(#A9A9A9,#A9A9A9) 
+		}
+		#calculator{
+			margin: auto;
+			border:  1px solid #A9A9A9;
+			height: 550px;
+			width: 400px;
+			padding: 12px;
+			border-radius:10px; 
+			box-shadow: 1px 25px 12px 0px rgba(0,0,0,0.4);
+			background-color: #F0FFFF;
+		}
+
+		.calc-header{
+			height: 90px;
+        }
+        
+		button{
+			width: 90px;
+			height: 60px;
+			background-color: skyblue;
+			border:none;
+			border-radius: 5px;
+			cursor: pointer;
+			color: white;
+			font-size: 2rem;
+			font-weight: 300;
+			padding: 5px;
+			margin: 2px;
+        }
+
+        button:hover{
+            background-color: rgb(155, 199, 193);
+        }
+		.screen{
+			border: none;
+			height: 100px;
+			width: 95%;
+			background-color:#2F4F4F;
+			padding:10px;
+		}
+		.formula{
+			height: 40px;
+			text-align: center;
+			font-size: 1.5rem;
+			color: #A0522D;
+			margin-bottom: 4px;
+			margin-top: 4px;
+			font-weight: 600;
+
+		}
+		.result{
+			font-weight: 600;
+			text-align: center;
+			font-size: 2rem;
+			color: #A0522D;
+			height: 40px;
+			margin-top: 4px;
+			margin-bottom: 4px;
+
+		}
+		.keypads{
+			height: 400px;
+			width: 100%;
+			margin: auto;
+			margin-top:20px; 
+		}
+
+		.special-keys button{
+			width: 50px;
+			height: 30px;
+			background-color: skyblue;
+			border:none;
+			border-radius: 10px;
+			cursor: pointer;
+			color: white;
+			font-size: 0.9rem;
+			font-weight: 300;
+			padding: 5px;
+			margin: 1px;
+		}
+		.special-keys{
+			margin-bottom:8px; 
+		}
+		.ac-btn{
+			background-color:#FF4500 !important;
+        }
+        
+        .ac-btn:hover{
+            background-color:#b94920 !important;
+        }
+
+
+		.del-btn{
+			background-color:red !important;
+        }
+        
+        .del-btn:hover{
+            background-color : rgb(160, 24, 24) !important;
+		}
+		
+		/* eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
+		.op-btn{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+		
+		.op-btn-eq{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-eq:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+
+		.op-btn-d{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-d:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+		
+		.op-btn-m{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-m:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+
+		.op-btn-s{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-s:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+
+		.op-btn-p{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-p:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+
+		.op-btn-n{
+			background-color:#191970 !important;	
+        }
+        
+        .op-btn-n:hover{
+            background-color: rgb(0, 26, 255) !important;
+		}
+	
+		/* mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
+
+@media screen and (max-width: 900px){
+
+	/* .special-keys{
+		display: none;
+	} */
+	.op-btn-n{
+		display:none;
+	}
+	.keypads{
+		height: 400px;
+		width: 100%;
+		/* border-width: 2px; */
+		/* display:inline-flex; */
+		/* position:relative; */
+		/* margin: auto; */
+		/* margin-top:20px;  */
+	}
+
+	button{
+		width: 90px;
+		height: 60px;
+		background-color: skyblue;
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		color: white;
+		font-size: 2rem;
+		font-weight: 300;
+		padding: 5px;
+		margin: 2px;
+	}
+	.op-btn-d{
+		background-color:#191970 !important;
+		width: 45px;
+		height: 60px;
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 300;
+		padding: 5px;
+		margin: 2px;
+		position: relative;
+		float: top;
+		top: 65px;
+		float:left;
+		left:300px;
+
+	}
+
+	.op-btn-m{
+		background-color:#191970 !important;
+		width: 45px;
+		height: 60px;
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 300;
+		padding: 5px;
+		margin: 2px;
+		position: relative;
+		float: top;
+		top: 65px;
+		float:left;
+		left:210px;
+
+	}
+
+	.op-btn-s{
+		background-color:#191970 !important;
+		width: 45px;
+		height: 60px;
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 300;
+		padding: 5px;
+		margin: 2px;
+		position:relative;
+		float: bottom;
+		bottom: 64px;
+		float:left;
+		left:260px;
+		/* top: */
+
+	}
+
+	.op-btn-p{
+		background-color:#191970 !important;
+		width: 45px;
+		height: 60px;
+		border:none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 300;
+		padding: 5px;
+		margin: 2px;
+		position: relative;
+		float: bottom;
+		bottom: 128px;
+		float:left;
+		left:300px;
+
+	}
+
+	.op-btn-eq{
+		width: 200px;
+		height: 62px;
+		position: relative;
+		float: left;
+		left: 200px;
+		float: bottom;
+		bottom:65px;
+	}
+
+	#ac{
+		
+		width: 45px;
+		height: 60px;
+		position:relative;
+		float: left;
+		left: 300px;
+		float:top;
+		top:0px;
+		float:bottom;
+		bottom:80px;
+	}
+	#del{
+		width: 45px;
+		height: 60px;
+		position:relative;
+		float: left;
+		left: 308px;
+		float:top;
+		top:0px;
+		float:bottom;
+		bottom:80px;
+	}
+
+	#fo{
+		position: relative;
+		float: right;
+		right:305px;
+	}
+
+	#sev{
+		position: relative;
+		float: right;
+		right: 305px
+	}
+
+	#ze{
+		position: relative;
+		float: right;
+		right:305px;
+	}
+
+	#on{
+		position: relative;
+		float: right;
+		right:305px;
+	}
+	#tw{
+		position: relative;
+		float: right;
+		right:112px;
+	}
+	#th{
+		position: relative;
+		float: left;
+		left:194px;
+	}
+	#fs{
+		position: relative;
+		float: right;
+		right:115px;
+	}
+
+	#eig{
+		position: relative;
+		float: right;
+		right:115px;
+	}
+	#fi{
+		position: relative;
+		float: right;
+		right:115px;
+	}
+
+	#tw{
+		position: relative;
+		float: right;
+		right:115px;
+	}
+	#ni{
+		position: relative;
+		float: left;
+		left:100px;
+	}
+
+	#si{
+		position: relative;
+		float: left;
+		left:145px;
+	}
+
+}
+		
